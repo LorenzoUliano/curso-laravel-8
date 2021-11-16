@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdatePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class PostController extends Controller
         return view('admin.posts.create');
     }
     
-    public function store(Request $request)
+    public function store(StoreUpdatePostRequest $request)
     {
         $post = Post::create($request->all());
 
