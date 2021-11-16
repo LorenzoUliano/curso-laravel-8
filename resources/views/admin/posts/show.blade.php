@@ -4,15 +4,15 @@
     
 
 @section('content')
-    <h1>Detalhes do post {{ $post->title }}</h1>
-    <ul>
-        <li><strong>Título:</strong> {{ $post->title }}</li>
-        <li><strong>Conteúdo:</strong> {{ $post->content }}</li>
+    <h1 class="pb-2 mb-5 text-4xl border-b-2 border-black">Detalhes do post {{ $post->title }} <a href="{{ route('posts.index') }}" class="font-bold hover:text-gray-600"><<</a></h1>
+    <ul class="m-3 ">
+        <li class="text-xl"><strong>Título:</strong> {{ $post->title }}</li>
+        <li class="text-xl "><strong>Conteúdo:</strong> {{ $post->content }}</li>
     </ul>
     <form action="{{ route('posts.destroy', $post->id) }}" method="post">
         @csrf
         <input type="hidden" name="_method" value="DELETE">
-        <button type="submit">Deletar o post: <strong>{{ $post->title }}</strong></button>
+        <button type="submit" class="p-2 bg-red-700 rounded hover:bg-red-500 ">Deletar o post: <strong>{{ $post->title }}</strong></button>
         
     </form>
 
