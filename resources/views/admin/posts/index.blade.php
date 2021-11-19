@@ -49,14 +49,15 @@
       </div>
     </div>
   </section>
-
-
+    <div class="align-middle mb-96">
+      @if (isset($filters))
+          
+          {{ $posts->appends($filters)->links('vendor.pagination.tailwind') }}
+          
+      @else
+          {{ $posts->links() }}
+      @endif  
+    </div>
     
-
-    @if (isset($filters))
-        {{ $posts->appends($filters)->links() }}
-    @else
-        {{ $posts->links() }}
-    @endif
 
 @endsection

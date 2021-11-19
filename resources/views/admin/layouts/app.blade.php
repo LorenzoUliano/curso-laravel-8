@@ -11,7 +11,7 @@
     <header>
         
     </header>
-    <div class="content container mx-auto px-4 mt-10">
+    <div class="container px-4 mx-auto mt-10 content">
         @yield('content')
     </div>
 

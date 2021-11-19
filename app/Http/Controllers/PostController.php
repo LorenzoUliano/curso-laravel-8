@@ -10,9 +10,10 @@ class PostController extends Controller
 {
     public function index() 
     {
-        $posts = Post::latest()->paginate();
 
-        
+        $posts = Post::paginate();
+
+        session()->put('esconder', true);
         return view('admin.posts.index', compact('posts'));
     }
     public function create()
